@@ -21,8 +21,6 @@ struct ContentView: View {
                                 .opacity(0.5)
                         }
                         Spacer()
-                        
-                        Spacer()
                     
                         HStack {
                             ZStack {
