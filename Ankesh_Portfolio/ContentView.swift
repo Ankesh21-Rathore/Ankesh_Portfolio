@@ -1,5 +1,4 @@
 import SwiftUI
-import Playgrounds
 
 struct ContentView: View {
     var body: some View {
@@ -27,28 +26,50 @@ struct ContentView: View {
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundStyle(.black)
                                     .opacity(0.3)
-                                    .frame(width: 100)
-                                Link("GitHub", destination: URL(string: "https://github.com/Ankesh21-Rathore")!)
-                                    .font(.body)
+                                    .frame(width: 110)
+                                Link(destination: URL(string: "https://github.com/Ankesh21-Rathore")!) {
+                                    HStack {
+                                        Image("gitHub_logo")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 27, height: 27)
+                                        
+                                        Text("GitHub")
+                                    }
                                     .foregroundStyle(.white)
+                                }
                             }
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundStyle(.black)
                                     .opacity(0.3)
-                                    .frame(width: 100)
-                                Link("LinkedIn", destination: URL(string: "https://www.linkedin.com/in/ankesh-rathore")!)
-                                    .font(.body)
+                                    .frame(width: 110)
+                                Link(destination: URL(string: "https://www.linkedin.com/in/ankesh-rathore")!) {
+                                    HStack {
+                                        Image("linkedIn_logo")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 27, height: 27)
+                                        Text("LinkedIn")
+                                    }
                                     .foregroundStyle(.white)
+                                }
                             }
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundStyle(.black)
                                     .opacity(0.3)
-                                    .frame(width: 100)
-                                Link("LeetCode", destination: URL(string: "https://leetcode.com/u/Ankesh_Rathore/")!)
-                                    .font(.body)
+                                    .frame(width: 110)
+                                Link(destination: URL(string: "https://leetcode.com/u/Ankesh_Rathore/")!) {
+                                    HStack {
+                                        Image("leetcode_logo")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 27, height: 27)
+                                        Text("LeetCode")
+                                    }
                                     .foregroundStyle(.white)
+                                }
                             }
                         }
                     }
@@ -64,6 +85,3 @@ struct ContentView: View {
     ContentView()
 }
 
-#Playground {
-   let c = 1 + 2
-}
