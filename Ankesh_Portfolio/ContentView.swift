@@ -5,7 +5,7 @@ struct ContentView: View {
         
         NavigationStack {
             ZStack {
-                LinearGradient(colors: [.white, .black], startPoint: .top, endPoint: .bottom)
+                LinearGradient(colors: [.white, .mint], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
                 ScrollView{
                     VStack {
@@ -17,10 +17,10 @@ struct ContentView: View {
                             Text("Building modern mobile experiences with Swift and SwiftUI. Passionate about clean architecture, efficient algorithms, and shipping software that feels native.")
                                 .frame(width: 350, height: 100)
                                 .foregroundStyle(.black)
-                                .opacity(0.5)
                         }
-                        Spacer()
-                    
+                        
+                        Spacer(minLength: 40)
+                        
                         HStack {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
@@ -72,6 +72,20 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        
+                        Spacer(minLength: 80)
+                        
+                        AboutView()
+                        
+                        Spacer(minLength: 80)
+                        
+                        Skills()
+                        
+                        Spacer(minLength: 80)
+
+                        Projects()
+                        Spacer(minLength: 80)
+                        Education()
                     }
                 }
             }
