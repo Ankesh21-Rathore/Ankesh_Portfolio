@@ -12,13 +12,14 @@ struct Skills: View {
     let frameAndTools: [String] = ["SwiftUI", "SwiftData", "VS Code", "Git & GitHub"]
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("- Tech Stack")
                     .font(.subheadline)
                 Text("Skills & Tools")
                     .font(.title2)
             }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .frame(width: 350, alignment: .topLeading)
+            
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(.black.opacity(0.1))

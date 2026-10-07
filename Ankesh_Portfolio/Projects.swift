@@ -9,14 +9,14 @@ import SwiftUI
 
 struct Projects: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             VStack(alignment: .leading){
                 Text("- What I've Built")
                     .font(.subheadline)
                 Text("Projects")
                     .font(.title)
             }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .frame(width: 350, alignment: .topLeading)
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(.black.opacity(0.1))

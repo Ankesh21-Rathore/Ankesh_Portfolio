@@ -86,6 +86,12 @@ struct ContentView: View {
                         Projects()
                         Spacer(minLength: 80)
                         Education()
+                        Spacer(minLength: 80)
+                        
+                        Text("- Get In Touch")
+                            .font(.subheadline)
+                        
+                        GetInTouch()
                     }
                 }
             }
