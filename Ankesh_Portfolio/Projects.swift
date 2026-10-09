@@ -12,6 +12,9 @@ struct Projects: View {
         VStack(spacing: 8) {
             VStack(alignment: .leading){
                 Text("- What I've Built")
+                    .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                        .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 2)
+
                     .font(.subheadline)
                 Text("Projects")
                     .font(.title)

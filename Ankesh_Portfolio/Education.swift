@@ -12,6 +12,9 @@ struct Education: View {
         VStack(spacing: 8) {
             VStack(alignment: .leading){
                 Text("- Background")
+                    .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                        .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 2)
+
                     .font(.subheadline)
                 Text("Education & Achievements")
                     .font(.title)
@@ -24,8 +27,8 @@ struct Education: View {
                     .frame(width: 350, height: 250)
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Education")
-                        .foregroundStyle(.blue)
-                    Text("B.Tech in Computer Science & Engineering")
+                        .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                        .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 2)
                         .font(.title3)
                         .bold()
                     
@@ -44,8 +47,9 @@ struct Education: View {
                     .frame(width: 350, height: 250)
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Certificate")
-                        .foregroundStyle(.blue)
-                    Text("Decode DSA with C++")
+                        .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                        .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 2)
+
                         .font(.title3)
                         .bold()
                     Text(
@@ -72,8 +76,9 @@ struct Education: View {
                     .frame(width: 350, height: 250)
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Achievement")
-                        .foregroundStyle(.blue)
-                    Text("200+ Problems Solved on LeetCode")
+                        .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                        .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 2)
+
                         .font(.title3)
                         .bold()
                     Text(

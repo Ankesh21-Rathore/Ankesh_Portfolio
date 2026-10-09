@@ -14,6 +14,9 @@ struct Skills: View {
         VStack {
             VStack(alignment: .leading, spacing: 8) {
                 Text("- Tech Stack")
+                    .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                        .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 2)
+
                     .font(.subheadline)
                 Text("Skills & Tools")
                     .font(.title2)

@@ -5,7 +5,7 @@ struct ContentView: View {
         
         NavigationStack {
             ZStack {
-                LinearGradient(colors: [.white, .mint], startPoint: .topLeading, endPoint: .bottomTrailing)
+                RadialGradient(colors: [.mint, .teal, .white], center: .center, startRadius: 10, endRadius: 500)
                     .ignoresSafeArea()
                 ScrollView{
                     VStack {
@@ -87,9 +87,6 @@ struct ContentView: View {
                         Spacer(minLength: 80)
                         Education()
                         Spacer(minLength: 80)
-                        
-                        Text("- Get In Touch")
-                            .font(.subheadline)
                         
                         GetInTouch()
                     }

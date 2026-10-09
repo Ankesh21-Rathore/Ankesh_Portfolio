@@ -11,7 +11,9 @@ struct AboutView: View {
     var body: some View {
             VStack(spacing: 8) {
                 VStack(alignment: .leading) {
-                    Text("- About Me")
+                    Text("- About Me")                        .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                        .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 2)
+
                         .font(.subheadline)
                     Text("Crafting Apps with Purpose")
                         .font(.title2)

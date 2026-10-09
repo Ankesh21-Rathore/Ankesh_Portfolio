@@ -9,6 +9,14 @@ import SwiftUI
 
 struct GetInTouch: View {
     var body: some View {
+        VStack {
+            Text("- Get In Touch")
+                .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                    .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 2)
+
+                .font(.subheadline)
+            
+        }
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .fill(.black.opacity(0.1))
