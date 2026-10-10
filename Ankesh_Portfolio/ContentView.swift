@@ -9,68 +9,69 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 ScrollView{
                     VStack {
-                        ZStack {
+                        HStack {
+                                Text("Building modern mobile experiences with Swift and SwiftUI. Passionate about clean architecture, efficient algorithms, and shipping software that feels native.")
+                                    .foregroundStyle(.black)
+                                ZStack {
+                                    Image("profile")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                                }
+                            }
+                        .frame(width: 350, height: 200)
+                        .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 350, height: 100)
-                                .foregroundStyle(.black)
-                                .opacity(0.1)
-                            Text("Building modern mobile experiences with Swift and SwiftUI. Passionate about clean architecture, efficient algorithms, and shipping software that feels native.")
-                                .frame(width: 350, height: 100)
-                                .foregroundStyle(.black)
-                        }
-                        
+                                .fill(Color.black.opacity(0.1))
+                        )
                         Spacer(minLength: 40)
                         
                         HStack {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundStyle(.black)
-                                    .opacity(0.3)
-                                    .frame(width: 110)
-                                Link(destination: URL(string: "https://github.com/Ankesh21-Rathore")!) {
-                                    HStack {
-                                        Image("gitHub_logo")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 27, height: 27)
-                                        
-                                        Text("GitHub")
-                                    }
-                                    .foregroundStyle(.white)
+                            Link(destination: URL(string: "https://github.com/Ankesh21-Rathore")!) {
+                                HStack {
+                                    Image("gitHub_logo")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 27, height: 27)
+                                    Text("GitHub")
+                                        .foregroundStyle(.white)
                                 }
                             }
-                            ZStack {
+                            .background(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .foregroundStyle(.black)
-                                    .opacity(0.3)
-                                    .frame(width: 110)
-                                Link(destination: URL(string: "https://www.linkedin.com/in/ankesh-rathore")!) {
-                                    HStack {
-                                        Image("linkedIn_logo")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 27, height: 27)
-                                        Text("LinkedIn")
-                                    }
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(.black.opacity(0.3))
+                            )
+                            
+                            Link(destination: URL(string: "https://www.linkedin.com/in/ankesh-rathore")!) {
+                                HStack {
+                                    Image("linkedIn_logo")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 27, height: 27)
+                                    Text("LinkedIn")
+                                        .foregroundStyle(.white)
                                 }
                             }
-                            ZStack {
+                            .background(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .foregroundStyle(.black)
-                                    .opacity(0.3)
-                                    .frame(width: 110)
-                                Link(destination: URL(string: "https://leetcode.com/u/Ankesh_Rathore/")!) {
-                                    HStack {
-                                        Image("leetcode_logo")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 27, height: 27)
-                                        Text("LeetCode")
-                                    }
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(.black.opacity(0.3))
+                            )
+                            
+                            
+                            Link(destination: URL(string: "https://leetcode.com/u/Ankesh_Rathore/")!) {
+                                HStack {
+                                    Image("leetcode_logo")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 27, height: 27)
+                                    Text("LeetCode")
+                                        .foregroundStyle(.white)
                                 }
                             }
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundStyle(.black.opacity(0.3))
+                            )
                         }
                         
                         Spacer(minLength: 80)
@@ -84,11 +85,19 @@ struct ContentView: View {
                         Spacer(minLength: 80)
 
                         Projects()
+                        
                         Spacer(minLength: 80)
-                        Education()
+                        
+                        Background()
+                        
                         Spacer(minLength: 80)
                         
                         GetInTouch()
+                        
+                        Spacer(minLength: 80)
+                        
+                        Text("Designed & Coded by Ankesh Rathore")
+                            .font(.footnote)
                     }
                 }
             }

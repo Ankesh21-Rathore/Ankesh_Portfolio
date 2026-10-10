@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-            VStack(spacing: 8) {
                 VStack(alignment: .leading) {
-                    Text("- About Me")                        .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
+                    Text("- About Me")
+                        .foregroundStyle(Color(red: 0.97, green: 0.97, blue: 0.98)) // Soft off-white for readability
                         .shadow(color: Color.black.opacity(0.8), radius: 2, x: 0, y: 2)
 
                         .font(.subheadline)
@@ -19,11 +19,7 @@ struct AboutView: View {
                         .font(.title2)
                 }
                 .frame(width: 350, alignment: .topLeading)
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.black.opacity(0.1))
-                        .frame(width: 360, height: 400)
-
+                
                     Text(
                         """
 I'm a passionate iOS Developer and aspiring Software Engineer with a solid
@@ -40,35 +36,37 @@ solutions to hard problems.
 """
                     )
                     .frame(width: 350, height: 400)
-                }
+                    .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.black.opacity(0.1))
+                    )
                 
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.black.opacity(0.1))
-                        .frame(width: 300)
+                
                     VStack(spacing: 10) {
                         Text("200+")
                             .font(.title)
                         Text("LeetCode Problems Solved")
                     }
-                }
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.black.opacity(0.1))
+                            .frame(width: 350)
+                    )
+                    .padding()
                 
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.black.opacity(0.1))
-                        .frame(width: 300)
-
                     VStack(spacing: 10) {
                         Text("2")
                             .font(.title)
                         Text("iOS Projects")
                     }
-                }
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.black.opacity(0.1))
+                    .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.black.opacity(0.1))
+                                .frame(width: 350)
+                        )
+                        .padding()
 
+                
                     VStack(spacing: 10) {
                         Text("B.tech")
                             .font(.title)
@@ -78,11 +76,12 @@ CSE, Institute of Technology & Management - (2024-2028)
 """
                         )
                     }
-                    
-                }
-                .frame(width: 300)
-
-        }
+                    .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.black.opacity(0.1))
+                                .frame(width: 350)
+                    )
+        
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Education: View {
+struct Background: View {
     var body: some View {
         VStack(spacing: 8) {
             VStack(alignment: .leading){
@@ -21,6 +21,7 @@ struct Education: View {
             }
             .frame(width: 350, alignment: .topLeading)
 
+            
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(.black.opacity(0.1))
@@ -32,10 +33,17 @@ struct Education: View {
                         .font(.title3)
                         .bold()
                     
+                    Text("B.Tech in Computer Science & Engineering")
+                        .font(.headline)
+                        .bold()
+                    
                     Text(
                         """
-                        Leading a 4-member team building a real-dataset-backed iOS app that processes student academic metrics into real-time visual insights. Designed the full client architecture and the entire SwiftUI frontend, managing timelines and optimising application flow.
-                        """
+Institute of Technology and Management, Gwalior 
+August 2024 – 2028 
+
+Pursuing a four-year undergraduate degree with a focus on algorithms, systems programming, and mobile development. Actively building real-world projects alongside academic coursework.                        
+"""
                     )
                 }
                 .frame(width: 350, height: 250)
@@ -58,7 +66,8 @@ struct Education: View {
                         2025-2026
                         """
                     )
-                    .font(.subheadline)
+                    .font(.headline)
+                    .bold()
                     
                     Text(
                         """
@@ -87,7 +96,8 @@ struct Education: View {
                         Ongoing
                         """
                     )
-                    .font(.subheadline)
+                    .font(.headline)
+                    .bold()
                     
                     Text(
                         """
@@ -106,5 +116,5 @@ structures, dynamic programming, and graph algorithms.
 }
 
 #Preview {
-    Education()
+    Background()
 }
