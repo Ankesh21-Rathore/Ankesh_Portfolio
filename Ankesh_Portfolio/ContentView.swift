@@ -102,7 +102,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Ankesh Rathore")
-            .navigationSubtitle("iOS Developer")
+            .navigationSubtitle("iOS Developer | Software Engineer")A
         }
     }
 }
