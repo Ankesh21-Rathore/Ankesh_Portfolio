@@ -12,8 +12,14 @@ struct Skills: View {
     let frameAndTools: [String] = ["SwiftUI", "SwiftData","XCode", "VS Code", "Git", "GitHub"]
     let coreConcepts: [String] = ["MVVM", "DSA", "Problem Solving", "OOP", "OS"]
     
+    var showBackground: Bool = false
+    
     var body: some View {
-        ScrollView {
+        ZStack {
+            if showBackground {
+                    RadialGradient(colors: [.mint, .teal, .white], center: .center, startRadius: 10, endRadius: 500)
+                        .ignoresSafeArea()
+            }
             VStack(spacing: 40) {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("- Tech Stack")
@@ -33,9 +39,10 @@ struct Skills: View {
                 // Framework & Tool
                 Card(name: "Framework & Tools", systemImage: "wrench.and.screwdriver", elements: frameAndTools)
                 // Core Concepts
-                Card(name: "Core Concepts", systemImage: "brain", elements: coreConcepts)
+                Card(name: "Core Concepts", systemImage: "brain.head.profile", elements: coreConcepts)
             }
             .padding(.vertical)
+            
         }
     }
 }
@@ -75,6 +82,7 @@ struct Card: View {
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .fill(.black.opacity(0.1))
+                .stroke(Color.secondary, lineWidth: 1)
         )
     }
 }
