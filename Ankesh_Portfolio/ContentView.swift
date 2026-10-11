@@ -5,7 +5,7 @@ struct ContentView: View {
     @State private var path = NavigationPath() // Use Navigationpath for programmatic screen pushing
     
     enum MenuDest: Hashable {
-        case skills, projects, about, getInTouch
+        case projects, skills, about, background, getInTouch
     }
     
     var body: some View {
@@ -63,6 +63,7 @@ struct ContentView: View {
                         
                         Text("Designed & Coded by Ankesh Rathore")
                             .font(.footnote)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }
@@ -70,14 +71,16 @@ struct ContentView: View {
             .navigationSubtitle("iOS Developer | Software Engineer")
             .navigationDestination(for: MenuDest.self) { destination in // Handle Routing then destination is append is append to path
                 switch destination {
+                case .projects:
+                    Projects(showBackground: true)
                 case .skills:
                     Skills(showBackground: true)
-                case .projects:
-                    Projects()
                 case .about:
-                    AboutView()
+                    AboutView(showBackground: true)
+                case .background:
+                    Background(showBackground: true)
                 case .getInTouch:
-                    GetInTouch()
+                    GetInTouch(showBackground: true)
                 }
             }
             .toolbar {
@@ -91,23 +94,36 @@ struct ContentView: View {
                     .popover(isPresented: $isShowingMenu, arrowEdge: .top) {
                         NavigationStack {
                             VStack(alignment: .leading, spacing: 14) {
-                                Button(action: {
-                                    isShowingMenu = false
-                                    path.append(MenuDest.skills) // Append to path
-                            }) {
-                                    Label("Skills & Tools", systemImage: "bolt.square")
-                                }
-                                Button(action: {
+                                Button(action: { // Projects
                                     isShowingMenu = false
                                     path.append(MenuDest.projects) // Append to path
                                 }) {
-                                    Label("Projects", systemImage: "folder")
+                                    Label("Projects", systemImage: "folder.fill")
                                 }
-                                Button(action: {
+                                Button(action: { // Skills
+                                    isShowingMenu = false
+                                    path.append(MenuDest.skills)
+                                }) {
+                                    Label("Skills & Tools", systemImage: "bolt.square.fill")
+                                }
+                                
+                                Button(action: { // About
                                     isShowingMenu = false
                                     path.append(MenuDest.about) // Append to path
                                 }) {
-                                    Label("About Me", systemImage: "person")
+                                    Label("About Me", systemImage: "person.fill")
+                                }
+                                Button(action: { // Qualification
+                                    isShowingMenu = false
+                                    path.append(MenuDest.projects) // Append to path
+                                }) {
+                                    Label("Education", systemImage: "graduationcap.fill")
+                                }
+                                Button(action: { // Contact
+                                    isShowingMenu = false
+                                    path.append(MenuDest.projects) // Append to path
+                                }) {
+                                    Label("Contact", systemImage: "message.badge.fill")
                                 }
                             }
                             .presentationCompactAdaptation(.popover)

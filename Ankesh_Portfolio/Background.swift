@@ -13,7 +13,7 @@ struct Background: View {
     var body: some View {
         ZStack {
             if showBackground {
-                RadialGradient(colors: [.mint, .teal, .white], center: .center, startRadius: 10, endRadius: 500)
+                RadialGradient(colors: [.white, .mint, .teal], center: .center, startRadius: 10, endRadius: 500)
                     .ignoresSafeArea()
             }
             
