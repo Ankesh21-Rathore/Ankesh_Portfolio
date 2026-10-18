@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Projects: View {
     var showBackground: Bool = false
-
+    let elements: [String] = ["Swift", "SwiftUI", "SwiftData","XCode", "MVVM", "SwiftData"]
+    
     var body: some View {
         ZStack {
             if showBackground {
@@ -28,17 +29,35 @@ struct Projects: View {
                 }
                 .frame(width: 350, alignment: .topLeading)
                 
-                    VStack {
-                        Text("Student Placement Predictor")
-                            .font(.title3)
-                            .bold()
-                        
-                        Text(
+                VStack {
+                    Text("Student Placement Predictor")
+                        .font(.title3)
+                        .bold()
+                    
+                    Text(
                         """
                         Leading a 4-member team building a real-dataset-backed iOS app that processes student academic metrics into real-time visual insights. Designed the full client architecture and the entire SwiftUI frontend, managing timelines and optimising application flow.
                         """
-                        )
+                    )
+                    Text("Using: ")
+                        .font(.title3)
+                        .bold()
+                    
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 90), spacing: 8)], spacing: 8) {
+                        ForEach(elements, id: \.self) { lg in
+                            Text(lg)
+                                .font(.subheadline)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 6)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .fill(.black.opacity(0.2))
+                                        .stroke(Color.blue, lineWidth: 1)
+                                )
+                        }
                     }
+                    
+                }
                     .background(
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(.black.opacity(0.1))
@@ -57,6 +76,23 @@ A dynamic iOS networking and messaging application with SwiftData for robust loc
 """
                         )
                         
+                        Text("Using: ")
+                            .font(.title3)
+                            .bold()
+                        
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 90), spacing: 8)], spacing: 8) {
+                            ForEach(elements, id: \.self) { lg in
+                                Text(lg)
+                                    .font(.subheadline)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 6)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .fill(.black.opacity(0.2))
+                                            .stroke(Color.blue, lineWidth: 1)
+                                    )
+                            }
+                        }
                     }
                     .background(
                             RoundedRectangle(cornerRadius: 10)

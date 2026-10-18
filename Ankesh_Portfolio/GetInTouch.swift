@@ -36,6 +36,7 @@ struct GetInTouch: View {
                             
                             Text("ankeshrathore812@gmail.com")
                                 .font(.subheadline)
+                                .shadow(color: .white, radius: 10)
                         }
                         .foregroundStyle(.white) // Ensures text and icon remain white
                         .padding(.horizontal, 16)

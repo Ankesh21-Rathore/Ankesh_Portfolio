@@ -5,7 +5,7 @@ struct ContentView: View {
     @State private var path = NavigationPath() // Use Navigationpath for programmatic screen pushing
     
     enum MenuDest: Hashable {
-        case projects, skills, about, background, getInTouch
+        case resume, projects, skills, about, background, getInTouch
     }
     
     var body: some View {
@@ -29,15 +29,11 @@ struct ContentView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color.black.opacity(0.1))
+                                .stroke(Color.secondary, lineWidth: 1)
                         )
                         Spacer(minLength: 40)
                         
-                        HStack {
-                            SocialHandle(dest: "https://github.com/Ankesh21-Rathore", logo: "gitHub_logo", text: "GitHub") // Github Profile
-                            SocialHandle(dest: "https://www.linkedin.com/in/ankesh-rathore", logo: "linkedIn_logo", text: "LinkedIn") // LinkedIn Profile
-                            
-                            SocialHandle(dest: "https://leetcode.com/u/Ankesh_Rathore/", logo: "leetcode_logo", text: "LeetCode") // LeetCode Profile
-                        }
+                        ResumeView()
                         
                         Spacer(minLength: 80)
                         
@@ -71,6 +67,8 @@ struct ContentView: View {
             .navigationSubtitle("iOS Developer | Software Engineer")
             .navigationDestination(for: MenuDest.self) { destination in // Handle Routing then destination is append is append to path
                 switch destination {
+                case .resume:
+                    ResumeView(showBackground: true)
                 case .projects:
                     Projects(showBackground: true)
                 case .skills:
